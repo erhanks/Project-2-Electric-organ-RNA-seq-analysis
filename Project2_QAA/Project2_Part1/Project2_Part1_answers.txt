@@ -1,0 +1,31 @@
+Output images are located within their corresponding folders: 
+- ./SRR25630302/SRR-302_1_MeanQualScore.png
+- ./SRR25630302/SRR-302_2_MeanQualScore.png
+- ./SRR25630376/SRR-376_1_MeanQualScore.png
+- ./SRR25630376/SRR-376_2_MeanQualScore.png
+
+2. Using `FastQC` via the command line on Talapas, produce plots of the per-base quality score distributions for R1 and R2 reads. Also, produce plots of the per-base N content, and comment on whether or not they are consistent with the quality score plots.
+
+- The per-base N content plots have flat lines at 0 across all four files, which aligns with the per-base quality score plots, which all have a line within the green region (i.e. have a quality score above 28), with error bars reaching into the yellow region around base as early as base 105 (SRR-302_2) and as late as base 150 (SRR-376_1), all well within acceptable ranges, and I expected to see no Ns in the N content plot. 
+
+3.  Run your quality score plotting script from your Demultiplexing assignment in Bi622. (Make sure you're using the "running sum" strategy!!) Describe how the `FastQC` quality score distribution plots compare to your own. If different, propose an explanation. Also, does the run time differ? Mem/CPU usage? If so, why?
+
+- Most of the visual differences come from the objective of the formatting of the plots: I wanted to limit the y-axis to only show the region where the base quality scores were (across all 4), and the FastQC plots have colors indicating high, mid, and low quality scores. The FastQC plots also had error bars, while my graph did not. 
+
+- As for the differences in data depicted in the graphs, the trends were the same in mine and in the FastQC report: majority of bases with around quality score 36 and dropping off to around 34 by the end of the read. Only exception to this is SRR-376_2, which dropped off to around 32 in the last 20 or so bases, which both my and FastQC's plots showed. 
+
+- Both SRR-302 runs took a minute longer than the SRR-376 runs, but they both used about the same memory and CPUs.
+
+4.  Comment on the overall data quality of your two libraries. Go beyond per-base qscore distributions. Examine the `FastQC` [documentation](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/) for guidance on interpreting results and planning next steps. Make and justify a recommendation on whether these data are of high enough quality to use for further analysis.
+
+I discussed this in FastQC.md, so I'll copy my observations from that document in bullet points here:
+
+- Across all my reports, base statistics, per base sequence quality, per sequence quality scores, per sequence GC content, per base N content, and sequence length distribution were all within expected ranges. In both of my _1.fastq files, the per tile sequence quality had a warning, and the areas of concern were different between them.
+
+- Per base sequence content is messy in the first 10 nucleotides for all files, but that is due to the Illumina indexes, and there are no areas of concern in the rest of the reads. 
+
+- The sequence duplication levels are the exact same across all four files, since the sequencing performed was RNA-seq and FastQC is built for whole genome sequencing. Likewise, overrepresented sequences, which is an area of concern in most of the files, is a product of RNA sequencing. 
+
+- Adapter content was in an acceptable range for SRR25630302 files, but SRR25630376 had an increased number of Illumina Universal Adapter in both files. 
+
+Overall I would say that, since most of the areas FastQC flagged as areas of concern could be explained with technical differences, the data are quality enough to use for further analysis.

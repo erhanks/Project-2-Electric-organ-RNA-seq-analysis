@@ -9,14 +9,70 @@
 # Overview
 updated 8/31/26
 ## Part 1
+### Files 
+I was assigned SRR25630302 and SRR25630376, and I downloaded them using FastQC with prefetch and then fasterq-dump
+
+Associated information, including graphs, are in folders of the same name in Project2_QAA/Project2_Part1.
+
+### Graphing
+I don't know how I ran my demultiplexing graphing script, but it was giving me a matplotlib error, so I copied the script over and renamed it to graph_qual_score.py. Resulting graphs are included in the Project2_QAA/Project2_Part1/SRR25630302 and roject2_QAA/Project2_Part1/SRR25630376 folders. 
+
+### /usr/bin/time
+ran with demux_run.sh
+
+- SRR-302_1
+    - Time
+        - User time (seconds): 331.80
+        - System time (seconds):  3.51
+        - Elapsed (wall clock) time (h:mm:ss or m:ss): 5:36.79
+    - CPU
+        - Percent of CPU this job got: 99%
+    - Memory
+        - Maximum resident set size (kbytes): 68964
+- SRR-302_2
+    - Time
+        - User time (seconds): 331.21
+        - System time (seconds): 3.61
+        - Elapsed (wall clock) time (h:mm:ss or m:ss):  5:39.02
+    - CPU
+        - Percent of CPU this job got: 98%
+    - Memory
+        - Maximum resident set size (kbytes): 69492
+- SRR-376_1
+    - Time
+        - User time (seconds): 259.75
+        - System time (seconds): 2.80
+        - Elapsed (wall clock) time (h:mm:ss or m:ss): 4:25.56
+    - CPU
+        - Percent of CPU this job got: 98%
+    - Memory
+        - Maximum resident set size (kbytes): 69432
+- SRR-376_2
+    - Time
+        - User time (seconds): 269.98
+        - System time (seconds): 2.74
+        - Elapsed (wall clock) time (h:mm:ss or m:ss):  4:34.08
+    - CPU
+        - Percent of CPU this job got: 99%
+    - Memory
+        - Maximum resident set size (kbytes): 69272
 ## Part 2
 ## Part 3
 ## Part 4
 ## Part 5
 # Log
 ## 9/1/26
+### File locations and answer doc
+Created Project2_Part1_answers.txt to store answers to questions. Wish it was a markdown file but alas.
+
+Had to rerun my script bc I forgot the -v in usr/bin/time (v for verbose aka more human readable). And then ran it again to make image files more specific. I really need to get better at naming files to be more helpful to me later
+
+
 ### Graphing
 I wasn't waiting long enough for matplotlib to install i think? I removed all my pixi files and then redid pixi init and that finally worked to add matplotlib. Im now running the script and it's pending.
+
+### Usr/bin/time 
+Ran and added usr bin time info to the lab notebook, and so was able to comment on it in my answers doc.
 
 ## 8/31/26
 ### Graphing
