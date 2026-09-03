@@ -1,0 +1,3 @@
+Both of the Read 1 files had more very short reads than the Read 2 files, as evidenced by the blue regions around lengths 40-60. For the most part, however, both reads were adapter trimmed very similarly. 
+
+I don't know which I expected to have shorter read lengths. I suspect the difference I noticed in the graphs is due to something about the bridge amplification process with Illumina, but I don't know what about it would cause one read to break more than the other. 

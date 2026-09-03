@@ -61,6 +61,35 @@ ran with demux_run.sh
 ## Part 4
 ## Part 5
 # Log
+## 9/2/26
+### To do
+I could probably complete the overview right now, but I dont want to add usr bin time stuff, so I'll do it later
+
+### renaming
+I DIDN'T REALIZE I HAD TO RENAME THE FILES oops
+
+rename coming in clutch: rename oldtxt newtxt oldtxt*
+
+- Ex: rename SRR25630302_ Crh_rhy51_EO_6cm_1_R SRR25630302_*
+
+fixed the part 1 folders, cutadapt outputs, and trimmomatic outs, distribution.sh, trimmomatic_run.sh, and cutadapt_run.sh
+- Not the way its notated in the $ stuff, but changed everything that would make it not run
+
+#### Replacements for easy copy pasting
+- 376 is the bigger number and has the longer name
+
+SRR25630302 = Crh_rhy51_EO_6cm_1  
+SRR25630376 = CcoxCrh_comrhy114_EO_adult_1
+
+SRR25630302_1 = Crh_rhy51_EO_6cm_1_R1
+SRR25630302_2 = Crh_rhy51_EO_6cm_1_R2
+
+SRR25630376_1 = CcoxCrh_comrhy114_EO_adult_1_R1
+SRR25630376_2 = CcoxCrh_comrhy114_EO_adult_1_R2
+
+###
+zcat Crh_rhy51_EO_6cm_1_R1_pair.fastq.gz| sed -n '2~4p' | awk '{print length($0)}' | sort -n |uniq -c |sort -n -k 2 > Crh_rhy51_EO_6cm_1_R1_pair.txt
+
 ## 9/1/26
 ### File locations and answer doc
 Created Project2_Part1_answers.txt to store answers to questions. Wish it was a markdown file but alas.
